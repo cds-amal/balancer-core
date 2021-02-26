@@ -68,7 +68,7 @@ contract('BFactory', async (accounts) => {
             await truffleAssert.reverts(factory.collect(nonAdmin, { from: nonAdmin }), 'ERR_NOT_BLABS');
         });
 
-        it('admin collects fees', async () => {
+        it.only('admin collects fees', async () => {
             await pool.bind(WETH, toWei('5'), toWei('5'));
             await pool.bind(DAI, toWei('200'), toWei('5'));
 
